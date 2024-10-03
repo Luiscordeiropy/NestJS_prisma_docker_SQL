@@ -1,0 +1,13 @@
+
+
+version: '3.8'  # Define a versão do docker Compose que está sendo utilizada
+services:       # lista os serviços que serão configurados 
+  postgres:
+    image: postgres  # Especifica que a imagem Docker a ser usada é a do PostgreSQL
+    restart: always  # Configura o contêiner para reiniar automaticamente se ele parar
+    environment:     # Define variáveis de ambiente para configurar o SQL
+      POSTGRES_USER: user          # Define o nome de usuário do banco de dados
+      POSTGRES_PASSWORD: password  # Define a senha do banco de dados
+      POSTGRES_DB: mydb            # Define o nome do banco de dados a ser criado
+    ports:
+      - "5432:5432"  # Mapeia a porta do container
